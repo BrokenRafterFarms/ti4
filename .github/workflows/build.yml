@@ -24,7 +24,13 @@ jobs:
       - name: Building Project
         run: npm run build
 
+      - name: List files
+        run: ls
+
       - name: Deploy
-        run: npm run deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
         
       
