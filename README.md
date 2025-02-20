@@ -3,6 +3,8 @@ A web tool to generate Twilight Imperium 4 game boards through many custom setti
 
 ## Web Quick Start
 
+[8 Player 3D](https://brokenrafterfarms.github.io/ti4/)
+
 Visit the [web page located on github pages](https://keeganw.github.io/ti4/). This is running from the `gh-pages` branch.
 
 ## Development Setup
