@@ -1,0 +1,22 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: List files
+        run: ls ${{ github.workspace }}
+
+      - name: NPM install
+        run: npm install
+
+      - name: Deploy
+        run: npm run deploy
+        
+      
