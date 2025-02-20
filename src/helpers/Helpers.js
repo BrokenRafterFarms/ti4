@@ -16,7 +16,7 @@ export const calculateOffsets = (width, height) => {
     return [
         [halfWidth, halfHeight],  // Mecatol Rex
         // Inner ring
-        [halfWidth, halfHeight + topHeight],
+        [halfWidth, halfHeight + topHeight+50],
         [halfWidth - treQuarWidth, halfHeight + halfHeight],
         [halfWidth - treQuarWidth, 0],
         [halfWidth, halfHeight - topHeight],
