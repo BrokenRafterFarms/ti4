@@ -12,72 +12,87 @@ export const calculateOffsets = (width, height) => {
     let halfWidth = Math.ceil(leftWidth * 0.5)
     let halfHeight = Math.ceil(topHeight * 0.5)
     let treQuarWidth = Math.ceil(leftWidth * 0.75)
+    let toplevel = halfHeight + Math.ceil(topHeight * 0)
+    let midlevel = halfHeight - Math.ceil(topHeight *6 )
+    let bottomlevel = halfHeight - Math.ceil(topHeight * 12)
+    let sidelevel = halfWidth - Math.ceil((leftWidth+halfWidth)*3)
 
     return [
-        [halfWidth, halfHeight],  // Mecatol Rex
-        // Inner ring
-        [halfWidth, halfHeight + topHeight+50],
-        [halfWidth - treQuarWidth, halfHeight + halfHeight],
-        [halfWidth - treQuarWidth, 0],
-        [halfWidth, halfHeight - topHeight],
-        [halfWidth + treQuarWidth, 0],
-        [halfWidth + treQuarWidth, halfHeight + halfHeight],
-        // Middle ring
-        [halfWidth, halfHeight + topHeight + topHeight],
-        [halfWidth - treQuarWidth, halfHeight + topHeight + halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight + topHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight - topHeight],
-        [halfWidth - treQuarWidth, halfHeight - topHeight - halfHeight],
-        [halfWidth, halfHeight - topHeight - topHeight],
-        [halfWidth + treQuarWidth, halfHeight - topHeight - halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight - topHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight + topHeight],
-        [halfWidth + treQuarWidth, halfHeight + topHeight + halfHeight],
-        // Outer Ring
-        [halfWidth, halfHeight + topHeight + topHeight + topHeight],
-        [halfWidth - treQuarWidth, halfHeight + topHeight + topHeight + halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight + topHeight + topHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight + topHeight + halfHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight + halfHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight - halfHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight - topHeight - halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight - topHeight - topHeight],
-        [halfWidth - treQuarWidth, halfHeight - topHeight - topHeight - halfHeight],
-        [halfWidth, halfHeight - topHeight - topHeight - topHeight],
-        [halfWidth + treQuarWidth, halfHeight - topHeight - topHeight - halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight - topHeight - topHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight - topHeight - halfHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight - halfHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight + halfHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight + topHeight + halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight + topHeight + topHeight],
-        [halfWidth + treQuarWidth, halfHeight + topHeight + topHeight + halfHeight],
-        // Extended Ring
-        [halfWidth, halfHeight + topHeight + topHeight + topHeight + topHeight],
-        [halfWidth - treQuarWidth, halfHeight + topHeight + topHeight + topHeight + halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight + topHeight + topHeight + topHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight + topHeight + topHeight + halfHeight],
-        [halfWidth - leftWidth - leftWidth - leftWidth, halfHeight + topHeight + topHeight],
-        [halfWidth - leftWidth - leftWidth - leftWidth, halfHeight + topHeight],
-        [halfWidth - leftWidth - leftWidth - leftWidth, halfHeight],
-        [halfWidth - leftWidth - leftWidth - leftWidth, halfHeight - topHeight],
-        [halfWidth - leftWidth - leftWidth - leftWidth, halfHeight - topHeight - topHeight],
-        [halfWidth - treQuarWidth - leftWidth - halfWidth, halfHeight - topHeight - topHeight - halfHeight],
-        [halfWidth - leftWidth - halfWidth, halfHeight - topHeight - topHeight - topHeight],
-        [halfWidth - treQuarWidth, halfHeight - topHeight - topHeight - topHeight - halfHeight],
-        [halfWidth, halfHeight - topHeight - topHeight - topHeight - topHeight],
-        [halfWidth + treQuarWidth, halfHeight - topHeight - topHeight - topHeight - halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight - topHeight - topHeight - topHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight - topHeight - topHeight - halfHeight],
-        [halfWidth + leftWidth + leftWidth + leftWidth, halfHeight - topHeight - topHeight],
-        [halfWidth + leftWidth + leftWidth + leftWidth, halfHeight - topHeight],
-        [halfWidth + leftWidth + leftWidth + leftWidth, halfHeight],
-        [halfWidth + leftWidth + leftWidth + leftWidth, halfHeight + topHeight],
-        [halfWidth + leftWidth + leftWidth + leftWidth, halfHeight + topHeight + topHeight],
-        [halfWidth + treQuarWidth + leftWidth + halfWidth, halfHeight + topHeight + topHeight + halfHeight],
-        [halfWidth + leftWidth + halfWidth, halfHeight + topHeight + topHeight + topHeight],
-        [halfWidth + treQuarWidth, halfHeight + topHeight + topHeight + topHeight + halfHeight],
+        [halfWidth, midlevel],  // Mecatol Rex Main Level
+        // Inner ring starting with tile 1
+        [halfWidth, midlevel + topHeight],
+        [halfWidth - treQuarWidth, midlevel + halfHeight],
+        [halfWidth - treQuarWidth, midlevel - halfHeight],
+        [halfWidth, midlevel - topHeight],
+        [halfWidth + treQuarWidth, midlevel - halfHeight],
+        [halfWidth + treQuarWidth, midlevel + halfHeight],
+        // Middle ring starting with tile 7
+        [halfWidth, midlevel + topHeight + topHeight],
+        [halfWidth - treQuarWidth, midlevel + topHeight + halfHeight],
+        [halfWidth - leftWidth - halfWidth, midlevel + topHeight],
+        [halfWidth - leftWidth - halfWidth, midlevel],
+        [halfWidth - leftWidth - halfWidth, midlevel - topHeight],
+        [halfWidth - treQuarWidth, midlevel - topHeight - halfHeight],
+        [halfWidth, midlevel - topHeight - topHeight],
+        [halfWidth + treQuarWidth, midlevel - topHeight - halfHeight],
+        [halfWidth + leftWidth + halfWidth, midlevel - topHeight],
+        [halfWidth + leftWidth + halfWidth, midlevel],
+        [halfWidth + leftWidth + halfWidth, midlevel + topHeight],
+        [halfWidth + treQuarWidth, midlevel + topHeight + halfHeight],
+
+        // Center of top level starting with tile 19
+        [halfWidth, toplevel],
+        // Inner ring starting with tile 20
+        [halfWidth, toplevel + topHeight],
+        [halfWidth - treQuarWidth, toplevel + halfHeight],
+        [halfWidth - treQuarWidth, toplevel - halfHeight],
+        [halfWidth, toplevel - topHeight],
+        [halfWidth + treQuarWidth, toplevel - halfHeight],
+        [halfWidth + treQuarWidth, toplevel + halfHeight],
+        // Middle ring starting with tile 26
+        [halfWidth, toplevel + topHeight + topHeight],
+        [halfWidth - treQuarWidth, toplevel + topHeight + halfHeight],
+        [halfWidth - leftWidth - halfWidth, toplevel + topHeight],
+        [halfWidth - leftWidth - halfWidth, toplevel],
+        [halfWidth - leftWidth - halfWidth, toplevel - topHeight],
+        [halfWidth - treQuarWidth, toplevel - topHeight - halfHeight],
+        [halfWidth, toplevel - topHeight - topHeight],
+        [halfWidth + treQuarWidth, toplevel - topHeight - halfHeight],
+        [halfWidth + leftWidth + halfWidth, toplevel - topHeight],
+        [halfWidth + leftWidth + halfWidth, toplevel],
+        [halfWidth + leftWidth + halfWidth, toplevel + topHeight],
+        [halfWidth + treQuarWidth, toplevel + topHeight + halfHeight],
+
+
+        // Center of bottom level starting with tile 38
+        [halfWidth, bottomlevel],
+        // Inner ring starting with tile 39
+        [halfWidth, bottomlevel + topHeight],
+        [halfWidth - treQuarWidth, bottomlevel + halfHeight],
+        [halfWidth - treQuarWidth, bottomlevel - halfHeight],
+        [halfWidth, bottomlevel - topHeight],
+        [halfWidth + treQuarWidth, bottomlevel - halfHeight],
+        [halfWidth + treQuarWidth, bottomlevel + halfHeight],
+        // Middle ring starting with tile 45
+        [halfWidth, bottomlevel + topHeight + topHeight],
+        [halfWidth - treQuarWidth, bottomlevel + topHeight + halfHeight],
+        [halfWidth - leftWidth - halfWidth, bottomlevel + topHeight],
+        [halfWidth - leftWidth - halfWidth, bottomlevel],
+        [halfWidth - leftWidth - halfWidth, bottomlevel - topHeight],
+        [halfWidth - treQuarWidth, bottomlevel - topHeight - halfHeight],
+        [halfWidth, bottomlevel - topHeight - topHeight],
+        [halfWidth + treQuarWidth, bottomlevel - topHeight - halfHeight],
+        [halfWidth + leftWidth + halfWidth, bottomlevel - topHeight],
+        [halfWidth + leftWidth + halfWidth, bottomlevel],
+        [halfWidth + leftWidth + halfWidth, bottomlevel + topHeight],
+        [halfWidth + treQuarWidth, bottomlevel + topHeight + halfHeight],
+
+        // Center of Side tiles starting with tile 57
+        [sidelevel, midlevel],
+        // Inner ring starting with tile 58
+        [sidelevel, midlevel + topHeight],
+        [sidelevel - treQuarWidth, midlevel + halfHeight],
+        [sidelevel - treQuarWidth, midlevel - halfHeight],
+        [sidelevel, midlevel - topHeight],
     ]
 }
