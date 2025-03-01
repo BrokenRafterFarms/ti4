@@ -1,13 +1,18 @@
 # TI4 Generator
 A web tool to generate Twilight Imperium 4 game boards through many custom settings.
 
+The generation link: [8 Player 3D Only](https://brokenrafterfarms.github.io/ti4/)
+
+## Details:
+
 This fork is based on a generation script built by [KeeganW](https://github.com/KeeganW/ti4)
 
 It has been customized to allow for a 3d board like the one below:
-
+![IMG_1354](https://github.com/user-attachments/assets/a6c81882-d15f-493f-aa07-7d0bfa8724a3)
 
 
 Building on top of what Keegan has already done the following image shows how the tiles are layed out and how I changed the layout.
+<img width="1124" alt="Screenshot 2025-02-28 at 8 53 11 PM" src="https://github.com/user-attachments/assets/f48e022b-167b-4166-a147-d32889ff0f61" />
 
 
 The adjacencyData.json was updated to make sure the tiles where correctly related to each other for calculation purposes.
@@ -27,7 +32,7 @@ Side note: Also created a github action to auto publish the build when pushed to
 
 ## Web Quick Start
 
-[8 Player 3D](https://brokenrafterfarms.github.io/ti4/)
+The Link: [8 Player 3D](https://brokenrafterfarms.github.io/ti4/)
 
 
 For the normal version:
